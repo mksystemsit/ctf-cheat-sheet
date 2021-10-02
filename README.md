@@ -22,7 +22,7 @@ This cheat sheet provides many tools, tips and tricks that can be useful in CTF 
 | RevShells | [revshells.com](https://revshells.com) | Generate syntax for spawning reverse shells depending on desired shell prompt and language used in RCE exploits. |
 | PayloadsAllTheThings | [GitHub: PayloadsAllTheThings](https://github.com/swisskeyrepo/PayloadsAllTheThings) | A list of useful payloads and bypasses for Web Application Security. Available in the Kali repos. |
 | SecLists | [GitHub: SecLists](https://github.com/danielmiessler/SecLists) | A collection of multiple types of lists used during security assessments, collected in one place. Typically installed by default in Kali and Parrot, and available in the Kali repos. |
-
+| SearchSploit | [GitHub: SearchSploit](https://github.com/offensive-security/searchsploit) | An archive of public exploits and corresponding vulnerable software. Developed for use by pentesters and vulnerability researchers. Allows you to search ExploitDB while offline. Preinstalled on Kali. |
 
 ## OSINT - Open Source INTelligence
 ### I'm Stuck!
@@ -74,7 +74,17 @@ The dynamic analysis is more variable in its execution, as you're literally runn
 
 ## Web
 
+Sometimes you'll come across a website in a CTF that gives you another breadcrumb, but no indication as to what to do next. These are some tools you can use to get some more info on the target site and perform further enumeration.
+
 ### DirBuster / GoBuster / FeroxBuster
+
+| Tool | Link | Description |
+| ---- | ---- | ----------- |
+| DirBuster | [tools.kali.org](https://tools.kali.org/web-applications/dirbuster) | Multi-threaded Java application for brute-forcing directories and filenames on web/application servers. Installed by default on Kali. |
+| GoBuster | [tools.kali.org](https://tools.kali.org/web-applications/gobuster) | Implementation of DirBuster written in Go. Supports both URIs and DNS subdomains with wildcard support. Installed by default on Kali. |
+| FeroxBuster | [GitHub: feroxbuster](https://github.com/epi052/feroxbuster) | Implementation of DirBuster written in Rust. Supports all featres of DirBuster/GoBuster. |
+
+**Note**: The syntax used here is for feroxbuster, use the syntax of dirbuster/gobuster if you want to use that instead.
 
 ### WordPress Enumeration
 
@@ -87,6 +97,6 @@ The dynamic analysis is more variable in its execution, as you're literally runn
 ### Tools
 | Name | Link | Description |
 | ---- | ---- | ----------- |
-| PEASS-ng | [Github: PEASS-ng](https://github.com/carlospolop/PEASS-ng) | Privilege Escalation Awesoem Scripts Suite |
+| PEASS-ng | [Github: PEASS-ng](https://github.com/carlospolop/PEASS-ng) | Privilege Escalation Awesome Scripts Suite |
 | GTFOBins | [gtfobins.github.io](https://gtfobins.github.io) | Curated list of Unix binaries that can be used to bypass local security restrictions in misconfigured systems. Useful for privilege escalation on a box where you have to live off the land. |
 

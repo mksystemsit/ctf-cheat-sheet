@@ -74,14 +74,19 @@ The dynamic analysis is more variable in its execution, as you're literally runn
 
 ## Web
 
+### DirBuster / GoBuster / FeroxBuster
+
+### WordPress Enumeration
+
 ## Mobile (Android/iOS)
 
 ## Miscellaneous
 
-## Fingerpinting
-
-### DirBuster / GoBuster / FeroxBuster
-
 ## Privilege Escalation
 
-### PEASS-ng
+### Tools
+| Name | Link | Description |
+| ---- | ---- | ----------- |
+| PEASS-ng | [Github: PEASS-ng](https://github.com/carlospolop/PEASS-ng) | Privilege Escalation Awesoem Scripts Suite |
+| GTFOBins | [gtfobins.github.io](https://gtfobins.github.io) | Curated list of Unix binaries that can be used to bypass local security restrictions in misconfigured systems. Useful for privilege escalation on a box where you have to live off the land. |
+

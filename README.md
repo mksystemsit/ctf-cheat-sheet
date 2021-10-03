@@ -251,4 +251,10 @@ If you can run vim as a super user via sudo, it doesn't drop elevated privileges
 sudo vim -c ':!/bin/sh'
 ```
 
+If you're in vim already:
+
+```vim
+:set shell=/bin/sh
+:shell
+```
 The above will spawn a new shell. Then jump into Bash and have at it :)

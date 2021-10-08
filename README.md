@@ -11,6 +11,13 @@ This cheat sheet provides many tools, tips and tricks that can be useful in CTF 
 | Remnux | [remnux.org](https://remnux.org) | A Linux distro loaded with tools for reverse-engineering and malware analysis. |
 | Docker | [docker.com](https://docker.com) | A containerisation platform used to run self-contained binaries and services in their own sandboxed environment. Similar to a virtual machine but uses far less resources, at the expense of sharing the same kernel as the host operating system. Many pentesting tools have pre-made containers in the Docker registry. |
 
+## Docker Resources
+
+| Image | Link | Description |
+| ----- | ---- | ----------- |
+| Kali Rolling | [hub.docker.com](https://hub.docker.com/r/kalilinux/kali-rolling) | Functional Kali Linux container, updated weekly in accordance with the Kali rolling repository. Not that there aren't any tools installed by default - do this via: `apt update && apt install -y kali-linux-headless` |
+| ParrotSec | [hub.docker.com](https://hub.docker.com/r/parrotsec/security) | Parrot Security container with the tools present in the ParrotSec VM and on the ISO. Use the **rolling** tag to get the more recent tools in line with the rolling release packages maintained by the Parrot team. |
+
 ## Reference Tools and Websites
 
 | Name | Site | Description |
@@ -257,4 +264,5 @@ If you're in vim already:
 :set shell=/bin/sh
 :shell
 ```
+
 The above will spawn a new shell. Then jump into Bash and have at it :)

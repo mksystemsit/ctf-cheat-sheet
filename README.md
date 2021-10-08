@@ -17,6 +17,7 @@ This cheat sheet provides many tools, tips and tricks that can be useful in CTF 
 | ----- | ---- | ----------- |
 | Kali Rolling | [hub.docker.com](https://hub.docker.com/r/kalilinux/kali-rolling) | Functional Kali Linux container, updated weekly in accordance with the Kali rolling repository. Not that there aren't any tools installed by default - do this via: `apt update && apt install -y kali-linux-headless` |
 | ParrotSec | [hub.docker.com](https://hub.docker.com/r/parrotsec/security) | Parrot Security container with the tools present in the ParrotSec VM and on the ISO. Use the **rolling** tag to get the more recent tools in line with the rolling release packages maintained by the Parrot team. |
+| OWASP Amass | [hub.docker.com](https://hub.docker.com/r/caffix/amass) | OWASP Amass performs network mapping of attack surfaces and external asset discovery via OSINT and active recon techniques. | 
 
 ## Reference Tools and Websites
 

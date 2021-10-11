@@ -134,6 +134,17 @@ mk@0x01:~$ ip -4 a s tun0 | grep -Po 'inet \K[\d.]+'
 
 ## Mobile (Android/iOS)
 
+Decompiling application using APKtool is always good, but it won't give you a clear or redable output. Getting a JAVA decomplied output is really helpfull. You can use Skylot's Jadx to decompile application into java and use its GUI for complete understanding of Android application.
+
+### Tools
+
+| Tools | Link | Description |
+| ----- | ---- | ----------- |
+| ApkTool | [GitHub: Apktool](https://ibotpeaches.github.io/Apktool/) | It is a tool for reverse engineering 3rd party, closed, binary Android apps. It makes possible to debug smali code step by step. Also it makes working with app easier because of project-like files structure and automation of some repetitive tasks like building apk, etc.|
+| Jadx | [GitHub: Jadx](https://github.com/skylot/jadx) | Command line and GUI tools for producing Java source code from Android Dex and Apk files. |
+| Decompiler | [decompiler.com](https://www.decompiler.com/) | Online website for getting a JAVA source code from Apk files |
+
+
 ## Miscellaneous
 
 ### Stabilising Your Reverse Shell
@@ -267,3 +278,13 @@ If you're in vim already:
 ```
 
 The above will spawn a new shell. Then jump into Bash and have at it :)
+
+## Challenges
+
+Here are some of popular websites for practicing your CTF skills, having a great set of challenges including all difficulty level.
+
+* [Pico CTF](https://picoctf.org)
+* [Ctflearn](https://ctflearn.com)
+* [W3challs](https://w3challs.com)
+* [Hacker101](https://ctf.hacker101.com)
+* [Hax.tor](http://hax.tor.hu/warmup1/)

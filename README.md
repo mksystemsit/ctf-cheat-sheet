@@ -43,6 +43,8 @@ If you want to know who an email address is registered to, use the [EPIEOS Email
 
 Use this especially for Gmail accounts, as the tool will return the Google account details for that address. This also works for Google Workspace (G Suite) addresses.
 
+Also check out [OH SHINT!](https://ohshint.gitbook.io) for more OSINT resources.
+
 ## Reverse Engineering and Binary Exploitation
 
 ### Tools

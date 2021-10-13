@@ -31,6 +31,9 @@ This cheat sheet provides many tools, tips and tricks that can be useful in CTF 
 | PayloadsAllTheThings | [GitHub: PayloadsAllTheThings](https://github.com/swisskeyrepo/PayloadsAllTheThings) | A list of useful payloads and bypasses for Web Application Security. Available in the Kali repos. |
 | SecLists | [GitHub: SecLists](https://github.com/danielmiessler/SecLists) | A collection of multiple types of lists used during security assessments, collected in one place. Typically installed by default in Kali and Parrot, and available in the Kali repos. |
 | SearchSploit | [GitHub: SearchSploit](https://github.com/offensive-security/searchsploit) | An archive of public exploits and corresponding vulnerable software. Developed for use by pentesters and vulnerability researchers. Allows you to search ExploitDB while offline. Preinstalled on Kali. |
+| DeHashed | [dehashed.com](https://dehashed.com) | Search engine for compromised credentials |
+| Spyse | [spyse.com](https://spyse.com) | Internet assets search engine for miscellaneous enumeration tasks |
+| Talos | [talosintelligence.com](https://talosintelligence.com) | IP address reputation lookup |
 
 ## OSINT - Open Source INTelligence
 ### I'm Stuck!

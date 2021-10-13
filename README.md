@@ -137,7 +137,7 @@ mk@0x01:~$ ip -4 a s tun0 | grep -Po 'inet \K[\d.]+'
 
 ## Mobile (Android/iOS)
 
-Decompiling application using APKtool is always good, but it won't give you a clear or redable output. Getting a JAVA decomplied output is really helpfull. You can use Skylot's Jadx to decompile application into java and use its GUI for complete understanding of Android application.
+Decompiling application using APKtool is always good, but it won't give you a clear or readable output. Getting a JAVA decomplied output is really helpful. You can use Skylot's Jadx to decompile application into Java and use its GUI for complete understanding of Android application.
 
 ### Tools
 

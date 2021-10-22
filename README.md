@@ -28,7 +28,7 @@ This cheat sheet provides many tools, tips and tricks that can be useful in CTF 
 | PentestMonkey Cheat Sheets | [pentestmonkey.net](https://pentestmonkey.net/category/cheat-sheet) | A collection of cheat sheets. Nuff said, check back regularly for updated content. |
 | CrackStation | [crackstation.net](https://crackstation.net) | Useful site for checking found hashes against known hash lists and rainbow tables. |
 | RevShells | [revshells.com](https://revshells.com) | Generate syntax for spawning reverse shells depending on desired shell prompt and language used in RCE exploits. |
-| PayloadsAllTheThings | [GitHub: PayloadsAllTheThings](https://github.com/swisskeyrepo/PayloadsAllTheThings) | A list of useful payloads and bypasses for Web Application Security. Available in the Kali repos. |
+| PayloadsAllTheThings | [GitHub: PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) | A list of useful payloads and bypasses for Web Application Security. Available in the Kali repos. |
 | SecLists | [GitHub: SecLists](https://github.com/danielmiessler/SecLists) | A collection of multiple types of lists used during security assessments, collected in one place. Typically installed by default in Kali and Parrot, and available in the Kali repos. |
 | SearchSploit | [GitHub: SearchSploit](https://github.com/offensive-security/searchsploit) | An archive of public exploits and corresponding vulnerable software. Developed for use by pentesters and vulnerability researchers. Allows you to search ExploitDB while offline. Preinstalled on Kali. |
 | DeHashed | [dehashed.com](https://dehashed.com) | Search engine for compromised credentials |

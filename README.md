@@ -286,7 +286,7 @@ The above will spawn a new shell. Then jump into Bash and have at it :)
 
 ## Challenges
 
-Here are some of popular websites for practicing your CTF skills, having a great set of challenges including all difficulty level.
+Here are some of popular websites for practicing your CTF skills, all of them are having a great set of challenges including all difficulty level .
 
 * [Pico CTF](https://picoctf.org)
 * [Ctflearn](https://ctflearn.com)
